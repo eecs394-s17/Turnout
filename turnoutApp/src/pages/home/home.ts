@@ -7,7 +7,21 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+	items = [];
+
   constructor(public navCtrl: NavController) {
+
+  	var prefs = ["music","food","sports"];
+
+  	for(var i=0;i<prefs.length;i++) {
+  		var pref = {
+  			name: prefs[i],
+  			selected: false
+  		};
+
+  		this.items.push(pref);
+
+  	}
 
   }
 
