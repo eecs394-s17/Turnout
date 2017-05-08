@@ -11,7 +11,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
-  	var prefs = ["music","food","sports","theater","movies","nightlife","greek","career","sci & tech"];
+  	var prefs = ["music","food","sports","theater","movies","nightlife","greek","career","tech"];
 
   	for(var i=0;i<prefs.length;i++) {
   		var pref = {
