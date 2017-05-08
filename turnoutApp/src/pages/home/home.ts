@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { EventsPage } from '../events/events';
 
 @Component({
   selector: 'page-home',
@@ -23,6 +24,16 @@ export class HomePage {
 
   	}
 
+  }
+
+  submitPrefs() {
+    var selected = [];
+    this.items.forEach(function(item){
+      if(item.selected){
+        selected.push(item);
+      }
+    })
+    this.navCtrl.setRoot(EventsPage, selected);
   }
 
 }
