@@ -1,9 +1,20 @@
 .card-background-page {
 
+  h2, p {
+    text-align: center;
+  }
+
+  .grid {
+    padding: 0;
+  }
+
   ion-card {
     position: relative;
     text-align: center;
     background-color: #1F3A93;
+    margin: 0;
+    padding: 0;
+    width: 100%;
   }
 
   .card-title {
@@ -42,4 +53,12 @@
 
   }
 
+}
+
+button {
+  width: 100%;
+}
+
+ion-app.ios [padding], ion-app.ios [padding] .scroll-content {
+    padding: 0px;
 }

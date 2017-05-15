@@ -9,6 +9,10 @@
 <ion-content padding class="card-background-page">
 
 <ion-grid>
+	<img src="../../assets/title.jpg">
+	<h2 class="title">Tell us what you like</h2>
+	<p class="title">You can change this at any time in your profile</p>
+
 	<ion-row *ngFor="let item of items;let i = index">
 
 		<ion-col>
@@ -24,10 +28,17 @@
 			</ion-card>
 		</ion-col>
 
+		<ion-col>
+			<ion-card [ngClass]="{'selected': item[1].selected}" (click)="check(i,1)">
+				<img src="../../assets/{{item[1].image}}" />
+				<div class="card-title">{{item[1].name}}</div>
+			</ion-card>
+		</ion-col>
+
 	</ion-row>
 </ion-grid>
 
-        <button ion-button icon-right (click)="submitPrefs()">Continue <ion-icon name="arrow-forward"></ion-icon></button>
+        <button ion-button icon-right (click)="submitPrefs()">Let's Go <ion-icon name="arrow-forward"></ion-icon></button>
 
 
 
