@@ -13,7 +13,7 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   	var prefs = ["Music","Food","Sports","Theater","Movies","Nightlife","Greek","Career","Tech","Clubs"];
-    var images = ["music.jpg","food.jpg","sports.jpg","theater.jpg","movies.jpg","music.jpg","music.jpg","music.jpg","science.jpg","music.jpg"];
+    var images = ["music.jpg","food.jpg","sports.jpg","theater.jpg","movies.jpg","nightlife.jpg","greek.jpg","career.jpg","science.jpg","club.jpg"];
 
   	for(var i=0;i<prefs.length;i++) {
   		var pref = {
