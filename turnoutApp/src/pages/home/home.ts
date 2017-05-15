@@ -12,28 +12,47 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
-  	var prefs = ["music","food","sports","theater","movies","nightlife","greek","career","tech"];
+  	var prefs = ["Music","Food","Sports","Theater","Movies","Nightlife","Greek","Career","Tech","Clubs"];
+    var images = ["music.jpg","music.jpg","music.jpg","music.jpg","music.jpg","music.jpg","music.jpg","music.jpg","music.jpg","music.jpg"];
 
   	for(var i=0;i<prefs.length;i++) {
   		var pref = {
   			name: prefs[i],
-  			selected: false
+  			selected: false,
+        image: images[i]
   		};
 
   		this.items.push(pref);
 
   	}
 
+    var ilen = this.items.length;
+    var nitems = [];
+    for(var i=0;i<ilen;i+=2) {
+
+      nitems.push([this.items[i],this.items[i+1]]);
+
+    } 
+
+    this.items = nitems;
+
   }
 
   submitPrefs() {
     var selected = [];
     this.items.forEach(function(item){
-      if(item.selected){
-        selected.push(item);
+      if(item[0].selected){
+        selected.push(item[0]);
+      }
+      if(item[1].selected){
+        selected.push(item[1]);
       }
     })
     this.navCtrl.setRoot(EventsPage, selected);
+  }
+
+  check(id1,id2) {
+    this.items[id1][id2].selected = !this.items[id1][id2].selected;
   }
 
 }
