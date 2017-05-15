@@ -27,11 +27,10 @@
         {{ event.categories.toString() }}
       </p>
     </ion-item>
-    <ion-buttons end>
-      <button ion-button icon-only (click)="addEvent()">
-        <ion-icon name="add"></ion-icon>
-      </button>
-    </ion-buttons>
+
+    <button ion-button icon-only [navPush] = "addEvents">
+      <ion-icon name="add"></ion-icon>
+    </button>
     <ion-item *ngFor="let event of events2 | async">
       <p>
         {{ event.name }}

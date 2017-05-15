@@ -8,6 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { EventsPage } from '../pages/events/events';
+import { AddEvents } from '../pages/add-events/add-events';
+
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
@@ -27,7 +29,8 @@ export const firebaseConfig = {
     MyApp,
     LoginPage,
     HomePage,
-    EventsPage
+    EventsPage,
+    AddEvents
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ export const firebaseConfig = {
     MyApp,
     LoginPage,
     HomePage,
-    EventsPage
+    EventsPage,
+    AddEvents
   ],
   providers: [
     StatusBar,

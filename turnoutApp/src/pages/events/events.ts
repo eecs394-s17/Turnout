@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
+import { AddEvents } from '../add-events/add-events';
+
 /**
  * Generated class for the Events page.
  *
@@ -16,6 +18,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable 
 })
 export class EventsPage {
 
+  addEvents = AddEvents;
   events = [];
   events2: FirebaseListObservable<any>;
 

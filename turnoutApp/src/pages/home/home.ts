@@ -32,7 +32,7 @@ export class HomePage {
 
       nitems.push([this.items[i],this.items[i+1]]);
 
-    } 
+    }
 
     this.items = nitems;
 
