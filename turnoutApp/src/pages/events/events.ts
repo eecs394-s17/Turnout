@@ -20,11 +20,25 @@ export class EventsPage {
 
   addEvents = AddEvents;
   events = [];
+  event3 = [];
   events2: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFireDatabase) {
     console.log(navParams);
-    this.events2 = af.list('/events');
+    var cats = [];
+    //this.events3 = [];
+    // for (var i = 0;i<navParams["data"].length;i++) {
+    //   cats.push(navParams["data"][i]["name"].toLowerCase());
+    // }
+    // var tester = af.list('/events')
+    // .subscribe(snapshots=>{
+    //     snapshots.forEach(snapshot => {
+    //       console.log(snapshot);
+    //       this.events3.push(snapshot);
+    //     });
+    // })
+
+    console.log("e2",this.events2);
 
     this.events = [
       // startDate, endDate, location, organizer, duration, description, image,
@@ -49,6 +63,8 @@ export class EventsPage {
           categories: ["music","theater"],
           score: 0
       }
+
+
 
       // {
       //   name: "Feelings? | Undergraduate Senior Art Show",
@@ -84,7 +100,8 @@ export class EventsPage {
 
     ];
 
-    this.sortEvents(navParams.data, this.events);
+
+    //var test = this.sortEvents(navParams.data, this.events2);
   }
 
   // Make this functional :/
