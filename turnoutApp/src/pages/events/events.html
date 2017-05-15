@@ -19,22 +19,18 @@
     </form>-->
 
     <!-- async????????? -->
-    <ion-card *ngFor="let event of events">
+    <ion-card *ngFor="let event of events3">
       <ion-card-header>
-        {{ event.name }}
+        {{ event.title }}
       </ion-card-header>
       <ion-card-content>
-        {{ event.categories.toString() }}
+        {{ event.description }}
       </ion-card-content>
     </ion-card>
 
     <button ion-button icon-only [navPush] = "addEvents">
       <ion-icon name="add"></ion-icon>
     </button>
-    <ion-item *ngFor="let event of events2 | async">
-      <p>
-        {{ event.name }}
-      </p>
-    </ion-item>
+    
   </ion-list>
 </ion-content>

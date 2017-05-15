@@ -20,23 +20,33 @@ export class EventsPage {
 
   addEvents = AddEvents;
   events = [];
-  event3 = [];
+  events3 = [];
   events2: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFireDatabase) {
     console.log(navParams);
     var cats = [];
-    //this.events3 = [];
-    // for (var i = 0;i<navParams["data"].length;i++) {
-    //   cats.push(navParams["data"][i]["name"].toLowerCase());
-    // }
-    // var tester = af.list('/events')
-    // .subscribe(snapshots=>{
-    //     snapshots.forEach(snapshot => {
-    //       console.log(snapshot);
-    //       this.events3.push(snapshot);
-    //     });
-    // })
+    this.events3 = [];
+    for (var i = 0;i<navParams["data"].length;i++) {
+      cats.push(navParams["data"][i]["name"].toLowerCase());
+    }
+    var tester = af.list('/events')
+    .subscribe(snapshots=>{
+        snapshots.forEach(snapshot => {
+          snapshot["score"] = 0;
+          for (var i = 0;i<cats.length;i++) {
+            if (snapshot["description"] != undefined && snapshot["description"].toLowerCase().includes(cats[i])){
+              snapshot["score"] += 1;
+            }
+          }
+          this.events3.push(snapshot);
+          console.log(snapshot);
+        });
+
+        this.events3.sort(function(a, b) {
+            return parseFloat(b.score) - parseFloat(a.score);
+        });
+    })
 
     console.log("e2",this.events2);
 
