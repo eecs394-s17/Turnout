@@ -17,12 +17,24 @@
           <button ion-button type="submit"></button>
       </ion-item>
     </form>-->
+
+    <!-- async????????? -->
     <ion-item *ngFor="let event of events">
       <p>
         {{ event.name }}
       </p>
       <p>
         {{ event.categories.toString() }}
+      </p>
+    </ion-item>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addEvent()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-item *ngFor="let event of events2 | async">
+      <p>
+        {{ event.name }}
       </p>
     </ion-item>
   </ion-list>

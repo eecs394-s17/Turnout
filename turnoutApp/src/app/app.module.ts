@@ -9,6 +9,19 @@ import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { EventsPage } from '../pages/events/events';
 
+// Import the AF2 Module
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+
+// AF2 Settings
+export const firebaseConfig = {
+  apiKey: "AIzaSyCMdMzpxpXriHZUtTAGJRCc51wtoSrSHDQ",
+  authDomain: "turnout-8d342.firebaseapp.com",
+  databaseURL: "https://turnout-8d342.firebaseio.com/",
+  storageBucket: "",
+};
+
 @NgModule({
   declarations: [
     MyApp,
@@ -18,7 +31,9 @@ import { EventsPage } from '../pages/events/events';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
