@@ -3,7 +3,6 @@
   <ion-navbar color="primary">
     <ion-title>Events</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -21,17 +20,25 @@
     <ion-searchbar (ionInput)="getEvents($event)"></ion-searchbar>
     <!-- async????????? -->
     <ion-card *ngFor="let event of filteredEvents">
-      <ion-card-header>
+      <img src="../../assets/movies.jpg" class="event-img">
+      <ion-card-header id="title">
         {{ event.title }}
       </ion-card-header>
       <ion-card-content>
-        {{ event.date | date:'medium'}} <br /> <br />
-        {{ event.description }}
+        <div class="time-div">
+          <h3 class="event-time">{{ event.date | date:'medium'}}</h3>
+        </div>
+        <button>RSVP</button>
+        <h3>{{ event.location }}</h3>
+        <div class="descrip-div">
+          <h3 class="event-descrip">{{ event.description }}</h3>
+          <a href="">More Information</a>
+        </div>
       </ion-card-content>
     </ion-card>
 
     <button ion-button icon-only [navPush] = "addEvents">
-      <ion-icon name="add"></ion-icon>
+      <ion-icon name="add">Add Event</ion-icon>
     </button>
 
   </ion-list>
