@@ -12,8 +12,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
-  	var prefs = ["Music","Food","Sports","Theater","Movies","Nightlife","Greek","Career","Tech","Clubs"];
-    var images = ["music.jpg","food.jpg","sports.jpg","theater.jpg","movies.jpg","nightlife.jpg","greek.jpg","career.jpg","science.jpg","club.jpg"];
+  	var prefs = ["Music","Food","Sports","Theater","Movies","Nightlife","Greek","Career","Tech"];
+    var images = ["music.jpg","food.jpg","sports.jpg","theater.jpg","movies.jpg","nightlife.jpg","greek.jpg","career.jpg","science.jpg"];
 
   	for(var i=0;i<prefs.length;i++) {
   		var pref = {
@@ -28,9 +28,9 @@ export class HomePage {
 
     var ilen = this.items.length;
     var nitems = [];
-    for(var i=0;i<ilen;i+=2) {
+    for(var i=0;i<ilen;i+=3) {
 
-      nitems.push([this.items[i],this.items[i+1]]);
+      nitems.push([this.items[i],this.items[i+1],this.items[i+2]]);
 
     }
 
@@ -46,6 +46,9 @@ export class HomePage {
       }
       if(item[1].selected){
         selected.push(item[1]);
+      }
+      if(item[2].selected){
+        selected.push(item[2]);
       }
     })
     this.navCtrl.setRoot(EventsPage, selected);
