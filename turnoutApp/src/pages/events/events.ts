@@ -21,17 +21,17 @@ export class EventsPage {
   addEvents = AddEvents;
   events = [];
   filteredEvents = [];
-  events2: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFireDatabase) {
+    console.log("Constructor running");
     var cats = [];
-    this.events = [];
     for (var i = 0;i<navParams["data"].length;i++) {
       cats.push(navParams["data"][i]["name"].toLowerCase());
     }
 
-    var tester = af.list('/events')
+    af.list('/events')
     .subscribe(snapshots=>{
+        this.events = [];
         snapshots.forEach(snapshot => {
           snapshot["score"] = 0;
           for (var i = 0;i<cats.length;i++) {
@@ -71,7 +71,6 @@ export class EventsPage {
   getEvents(ev: any) {
 
     this.filteredEvents = this.events;
-    console.log(this.filteredEvents);
     // set val to the value of the searchbar
     let val = ev.target.value;
 
@@ -84,7 +83,6 @@ export class EventsPage {
         return (inTitle || inDescription);
       })
     }
-    console.log(this.filteredEvents);
   }
 
 }
