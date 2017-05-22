@@ -84,6 +84,7 @@ export class EventsPage {
         return (inTitle || inDescription);
       })
     }
+    
     console.log(this.filteredEvents);
   }
 

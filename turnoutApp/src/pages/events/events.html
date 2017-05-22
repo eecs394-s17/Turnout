@@ -25,6 +25,7 @@
         {{ event.title }}
       </ion-card-header>
       <ion-card-content>
+        {{ event.date | date:'medium'}} <br /> <br />
         {{ event.description }}
       </ion-card-content>
     </ion-card>
