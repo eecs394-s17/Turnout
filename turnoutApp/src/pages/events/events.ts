@@ -78,7 +78,10 @@ export class EventsPage {
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
       this.filteredEvents = this.filteredEvents.filter((item) => {
-        return (item.description.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        var inDescription =  (item.description.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        var inTitle = (item.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
+
+        return (inTitle || inDescription);
       })
     }
     console.log(this.filteredEvents);
