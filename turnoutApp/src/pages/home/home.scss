@@ -25,9 +25,9 @@
   ion-card {
     position: relative;
     text-align: center;
-    background-color: #1F3A93;
     margin: 0;
     padding: 0;
+    opacity: 1;
     width: 100%;
   }
 
@@ -49,14 +49,18 @@
   }
 
   img {
-    width: 110px;
-    height: 110px;
+    width: 100%;
+    height: 95px;
+    -webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+    -webkit-filter: brightness(80%);
+      opacity: .9;
   }
 
   .selected {
     img{
-      opacity: .9;
+      opacity: .3;
     }
+    background-color: #29D9CB;
   }
 
   ion-row {
@@ -86,4 +90,7 @@ ion-app.ios [padding], ion-app.ios [padding] .scroll-content {
 #cover {
   width: 100%;
   height: auto;
+  opacity: 1;
+  -webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+  -webkit-filter: brightness(100%);
 }
