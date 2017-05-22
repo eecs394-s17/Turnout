@@ -23,7 +23,6 @@ export class EventsPage {
   filteredEvents = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFireDatabase) {
-    console.log("Constructor running");
     var cats = [];
     for (var i = 0;i<navParams["data"].length;i++) {
       cats.push(navParams["data"][i]["name"].toLowerCase());
@@ -48,25 +47,6 @@ export class EventsPage {
         this.filteredEvents = this.events;
     });
    }
-
-  // Make this functional :/
-  sortEvents(userPrefs, eventList){
-      // Calculates the Score for a given event
-      // Counts the number of keyword matches between the user's preferences and the event categories
-      for(var i=0; i< userPrefs.length; i++){
-          for(var j=0; j< eventList.length; j++){
-              if(eventList[j].categories.indexOf(userPrefs[i].name) >= 0){
-                  eventList[j].score += 1
-              }
-          }
-      }
-      // Sort the list from Highest Score to Lowest
-      eventList.sort(
-        function(x, y){
-            return y.score - x.score;
-        }
-      );
-  }
 
   getEvents(ev: any) {
 
