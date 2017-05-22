@@ -20,16 +20,16 @@ export class EventsPage {
 
   addEvents = AddEvents;
   events = [];
-  events3 = [];
+  filteredEvents = [];
   events2: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, af: AngularFireDatabase) {
-    console.log(navParams);
     var cats = [];
-    this.events3 = [];
+    this.events = [];
     for (var i = 0;i<navParams["data"].length;i++) {
       cats.push(navParams["data"][i]["name"].toLowerCase());
     }
+
     var tester = af.list('/events')
     .subscribe(snapshots=>{
         snapshots.forEach(snapshot => {
@@ -39,80 +39,15 @@ export class EventsPage {
               snapshot["score"] += 1;
             }
           }
-          this.events3.push(snapshot);
-          console.log(snapshot);
+          this.events.push(snapshot);
         });
 
-        this.events3.sort(function(a, b) {
+        this.events.sort(function(a, b) {
             return parseFloat(b.score) - parseFloat(a.score);
         });
-    })
-
-    console.log("e2",this.events2);
-
-    this.events = [
-      // startDate, endDate, location, organizer, duration, description, image,
-      {
-          name: "Mayfest Battle of the Bands",
-          categories: ["music","nightlife"],
-          score: 0
-      },{
-          name: "Womens Club Soccer vs DePaul",
-          categories: ["sports"],
-          score: 0
-      },{
-          name: "IFC Todoroki Sushi Contest",
-          categories: ["greek","food"],
-          score: 0
-      },{
-          name: "Open Hack Night",
-          categories: ["tech","food"],
-          score: 0
-      },{
-          name: "Waa-Mu Show",
-          categories: ["music","theater"],
-          score: 0
-      }
-
-
-
-      // {
-      //   name: "Feelings? | Undergraduate Senior Art Show",
-      //   description: "Artist Statements: Daniel Eghdami: In our daily lives, we experience uninvited, chaotic and unavoidable events. They affect us in complex ways that can compromise our objectivity, which can interfere with the way we interact with the world around us. I want to appreciate what happens in the world around me rather than being dominated by the feeling that it is stressful and disturbing. That is why, as an artist, I strive to characterize unspoken truths and highlight uncommon opinions that help me (and hopefully others) gain some fresh perspectives. ",
-      //   image: "https://scontent-ort2-1.xx.fbcdn.net/v/t31.0-8/18238481_10212193906905693_7035049923914598537_o.jpg?oh=5b85d5f853d8471dbfd162001d4ff559&oe=597BC28A",
-      //   startDate: new Date(),
-      //   endDate: new Date(),
-      //   duration: 0,
-      //   location: "test",
-      //   organizer: "test",
-      //   categories: [],
-      // },{
-      //   name: "test",
-      //   description: "test",
-      //   image: "image_url",
-      //   startDate: new Date(),
-      //   endDate: new Date(),
-      //   duration: 0,
-      //   location: "test",
-      //   organizer: "test",
-      //   categories: [],
-      // },{
-      //   name: "test",
-      //   description: "test",
-      //   image: "image_url",
-      //   startDate: new Date(),
-      //   endDate: new Date(),
-      //   duration: 0,
-      //   location: "test",
-      //   organizer: "test",
-      //   categories: [],
-      // },
-
-    ];
-
-
-    //var test = this.sortEvents(navParams.data, this.events2);
-  }
+        this.filteredEvents = this.events;
+    });
+   }
 
   // Make this functional :/
   sortEvents(userPrefs, eventList){
@@ -133,8 +68,20 @@ export class EventsPage {
       );
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad Events');
-  } 
+  getEvents(ev: any) {
+
+    this.filteredEvents = this.events;
+    console.log(this.filteredEvents);
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.filteredEvents = this.filteredEvents.filter((item) => {
+        return (item.description.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
+    console.log(this.filteredEvents);
+  }
 
 }

@@ -18,8 +18,9 @@
       </ion-item>
     </form>-->
 
+    <ion-searchbar (ionInput)="getEvents($event)"></ion-searchbar>
     <!-- async????????? -->
-    <ion-card *ngFor="let event of events3">
+    <ion-card *ngFor="let event of filteredEvents">
       <ion-card-header>
         {{ event.title }}
       </ion-card-header>
