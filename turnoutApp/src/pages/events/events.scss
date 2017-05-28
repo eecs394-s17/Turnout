@@ -4,7 +4,24 @@ page-events {
         font-size: 22pt;
         margin-top: -65px;
         margin-bottom: 10px;
-        font-family: "SF-UI-Display-Regular"
+        font-family: "SF-UI-Display-Regular";
+        width: 260px;
+    }
+
+    .people {
+        position: absolute;
+        right: 45px;
+        font-size: 18pt;
+        margin-top: 10px;
+    }
+
+    .people-count {
+        position: absolute;
+        right: 25px;
+        margin-top: -21px;
+        font-size: 11pt;
+        color: #FFF;
+        font-family: "SF-UI-Display-Regular";
     }
 
     .event-time {
@@ -12,14 +29,106 @@ page-events {
         margin: 0;
     }
 
+    .rsvp {
+        position: absolute;
+        right: 20px;
+        width: 65px;
+        height: 25px;
+        background-color: #29D9CB;
+        margin-top: -19px;
+    }
+
+    .rsvp-icon {
+        font-family: "SF-UI-Display-Regular";
+        font-size: 0.8em;
+    }
+
+    .pin {
+        margin-top: 3px;
+        color: #F26173;
+        position: absolute;
+    }
+
+    .event-time {
+        font-family: "SF-UI-Display-Regular";
+        color: #616161;
+        font-size: 12pt;
+    }
+
+    .location {
+        margin-top: 3px;
+        margin-left: 20px;
+        color: #616161;
+    }
+
     .event-descrip {
-        margin-top: 7px;
+        margin-top: 20px;
         margin-bottom: 5px;
         line-height: 1.2em;
+        color: #212121;
     }
 
     a {
         color: #29D9CB;
+    }
+
+    .divider {
+        margin-top: 15px;
+        border-bottom: 1px solid #EBEBEB;
+        width: 100%;
+    }
+
+    .bottom-collection {
+        padding-bottom: 30px;
+    }
+
+    .bottom-icon {
+        color: #29D9CB;
+        margin-top: 10px;
+        position: absolute;
+        right: 0;
+        font-size: 16pt;
+    }
+
+    .share {
+        right: 160px;
+    }
+
+    .like {
+        right: 100px;
+    }
+
+    .comment {
+        right: 40px;
+    }
+
+    .counts {
+        position: absolute;
+        font-family: "SF-UI-Display-Regular";
+        color: #616161;
+        font-size: 10pt;
+        bottom: 2px;
+        left: 22.5px;
+    }
+
+    #comment-count {
+        left: 20px;
+    }
+
+    .add-events {
+        width: 95%;
+        margin: 3% 2.5% 2% 2.5%;
+    }
+
+    .add-events-text {
+        padding-bottom: 2px;
+        font-size: 16pt;
+    }
+
+    small {
+        font-family: "SF-UI-Display-Regular";
+        bottom: 50px;
+        font-size: 14pt;
     }
 }
 

@@ -18,29 +18,47 @@
     </form>-->
 
     <ion-searchbar (ionInput)="getEvents($event)"></ion-searchbar>
-    <ion-icon name="heart"></ion-icon>
 
     <!-- async????????? -->
     <ion-card *ngFor="let event of filteredEvents">
       <img src="../../assets/movies.jpg" class="event-img">
       <ion-card-header id="title">
         {{ event.title }}
+        <ion-icon ios="ios-people-outline" md="md-people" class="people"></ion-icon>
+        <p class="people-count">25</p>
+
       </ion-card-header>
       <ion-card-content>
         <div class="time-div">
           <h3 class="event-time">{{ event.date | date:'medium'}}</h3>
         </div>
-        <button>RSVP</button>
-        <h3>{{ event.location }}</h3>
+        <button ion-button icon-only class="rsvp">
+          <ion-icon class="rsvp-icon">RSVP</ion-icon>
+        </button>
+        <ion-icon ios="ios-pin" md="md-pin" class="pin"></ion-icon>
+        <h3 class="location">{{ event.location }}</h3>
         <div class="descrip-div">
           <h3 class="event-descrip">{{ event.description }}</h3>
           <a href="">More Information</a>
         </div>
+        <div class="divider"></div>
+        <div class="bottom-collection">
+          <ion-icon ios="ios-share-alt" md="md-share-alt" class="share bottom-icon"></ion-icon>
+          <ion-icon ios="ios-heart" md="md-heart" class="like bottom-icon">
+            <p class="counts">9</p>
+          </ion-icon>
+          <ion-icon ios="ios-text" md="md-text" class="comment bottom-icon">
+            <p class="counts" id="comment-count">4</p>
+          </ion-icon>
+        </div>
+
       </ion-card-content>
     </ion-card>
 
-    <button ion-button icon-only [navPush] = "addEvents">
-      <ion-icon name="add">Add Event</ion-icon>
+    <button ion-button icon-only [navPush] = "addEvents" class="add-events">
+      <ion-icon name="add" class="add-events-text">
+        <small>Add Event</small>
+      </ion-icon>
     </button>
 
   </ion-list>
