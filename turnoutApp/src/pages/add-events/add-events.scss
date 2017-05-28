@@ -1,3 +1,58 @@
 page-add-events {
+    .photo-div {
+        text-align: center;
+    }
+
+    .photo-div > img {
+        width: 100%;
+        -webkit-filter: grayscale; /*sepia, hue-rotate, invert....*/
+        -webkit-filter: brightness(60%);
+    }
+
+    .photo-div > ion-icon {
+        color: #29D9CB;
+        position: absolute;
+        font-size: 30pt;
+        text-align: center;
+        left: 45%;
+        right: 45%;
+        margin-top: -130px;
+    }
+
+    .photo-div > h3 {
+        font-family: "SF-UI-Display-Regular";
+        // color: #FFF;
+        position: absolute;
+        margin-top: -80px;
+        color: #fff;
+        left: 20%;
+        right: 20%;
+        font-size: 18pt;
+    }
+
+    .photo-div > p {
+        margin-top: -80px;
+    }
+
+    .title-div {
+        height: 140px;
+        background-color: #29D9CB;
+    }
+
+    #title {
+        position: absolute;
+        color: #FFF;
+        margin-bottom: -20px;
+    }
+
+    .title-div > form {
+        color: #FFF;
+        background-color: transparent;
+
+    }
+
+    .item {
+        background-color: transparent;
+    }
 
 }

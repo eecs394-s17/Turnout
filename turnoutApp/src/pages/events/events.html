@@ -5,6 +5,8 @@
     <button ion-button icon-only [navPush] = "addEvents" class="add-button">
       <ion-icon ios="ios-add-circle" md="md-add-circle" class="add-icon"></ion-icon>
     </button>
+    <ion-searchbar (ionInput)="getEvents($event)" class="search"></ion-searchbar>
+
   </ion-navbar>
 </ion-header>
 
@@ -19,7 +21,6 @@
           <button ion-button type="submit"></button>
       </ion-item>
     </form>-->
-    <ion-searchbar (ionInput)="getEvents($event)" class="search"></ion-searchbar>
 
 
 
