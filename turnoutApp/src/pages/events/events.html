@@ -18,6 +18,8 @@
     </form>-->
 
     <ion-searchbar (ionInput)="getEvents($event)"></ion-searchbar>
+    <ion-icon name="heart"></ion-icon>
+
     <!-- async????????? -->
     <ion-card *ngFor="let event of filteredEvents">
       <img src="../../assets/movies.jpg" class="event-img">
