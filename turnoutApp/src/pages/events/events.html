@@ -2,6 +2,9 @@
 
   <ion-navbar color="primary">
     <ion-title>Events</ion-title>
+    <button ion-button icon-only [navPush] = "addEvents" class="add-button">
+      <ion-icon ios="ios-add-circle" md="md-add-circle" class="add-icon"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
@@ -16,14 +19,8 @@
           <button ion-button type="submit"></button>
       </ion-item>
     </form>-->
+    <ion-searchbar (ionInput)="getEvents($event)" class="search"></ion-searchbar>
 
-    <ion-searchbar (ionInput)="getEvents($event)"></ion-searchbar>
-
-    <button ion-button icon-only [navPush] = "addEvents" class="add-events">
-      <ion-icon name="add" class="add-events-text">
-        <small>Add Event</small>
-      </ion-icon>
-    </button>
 
 
     <!-- async????????? -->

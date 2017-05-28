@@ -8,6 +8,23 @@ page-events {
         width: 260px;
     }
 
+    .add-button {
+        margin: 0;
+        width: 30px;
+        height: 30px
+    }
+
+    .add-icon {
+        color: #FFF;
+        font-size: 18pt;
+        margin-left: 10px;
+    }
+
+    .search {
+        background-color: #EBEBEB;
+        border: none;
+    }
+
     .people {
         position: absolute;
         right: 45px;
@@ -117,22 +134,6 @@ page-events {
 
     #comment-count {
         left: 20px;
-    }
-
-    .add-events {
-        width: 95%;
-        margin: 3% 2.5% 2% 2.5%;
-    }
-
-    .add-events-text {
-        padding-bottom: 2px;
-        font-size: 16pt;
-    }
-
-    small {
-        font-family: "SF-UI-Display-Regular";
-        bottom: 50px;
-        font-size: 14pt;
     }
 }
 
