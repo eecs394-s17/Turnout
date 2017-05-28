@@ -19,6 +19,13 @@
 
     <ion-searchbar (ionInput)="getEvents($event)"></ion-searchbar>
 
+    <button ion-button icon-only [navPush] = "addEvents" class="add-events">
+      <ion-icon name="add" class="add-events-text">
+        <small>Add Event</small>
+      </ion-icon>
+    </button>
+
+
     <!-- async????????? -->
     <ion-card *ngFor="let event of filteredEvents">
       <img src="../../assets/movies.jpg" class="event-img">
@@ -54,12 +61,5 @@
 
       </ion-card-content>
     </ion-card>
-
-    <button ion-button icon-only [navPush] = "addEvents" class="add-events">
-      <ion-icon name="add" class="add-events-text">
-        <small>Add Event</small>
-      </ion-icon>
-    </button>
-
   </ion-list>
 </ion-content>
