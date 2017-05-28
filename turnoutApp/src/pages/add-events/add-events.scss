@@ -1,4 +1,8 @@
 page-add-events {
+    ion-header {
+        background-color: #F26173;
+    }
+
     .photo-div {
         text-align: center;
     }
@@ -48,11 +52,14 @@ page-add-events {
     .title-div > form {
         color: #FFF;
         background-color: transparent;
-
     }
 
     .item {
         background-color: transparent;
     }
 
+    #submit-button {
+        width: 95%;
+        margin: 3% 2.5% 2% 2.5%;
+    }
 }
