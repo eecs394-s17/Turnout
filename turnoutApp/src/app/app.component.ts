@@ -11,7 +11,7 @@ import { EventsPage } from '../pages/events/events';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = EventsPage;
+  rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

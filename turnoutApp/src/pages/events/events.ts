@@ -41,10 +41,13 @@ export class EventsPage {
           this.events.push(snapshot);
         });
 
-        this.events.sort(function(a, b) {
-            return parseFloat(b.score) - parseFloat(a.score);
+        this.filteredEvents = this.events.sort(function(a, b) {
+            if(b.score == a.score){
+                return Date.parse(a.date) - Date.parse(b.date);
+            } else {
+                return parseFloat(b.score) - parseFloat(a.score);
+            }
         });
-        this.filteredEvents = this.events;
     });
    }
 
@@ -63,8 +66,6 @@ export class EventsPage {
         return (inTitle || inDescription);
       })
     }
-
-    console.log(this.filteredEvents);
   }
 
 }
