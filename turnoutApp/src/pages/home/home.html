@@ -9,7 +9,7 @@
 <ion-content padding class="card-background-page">
 
 <ion-grid>
-	<img src="../../assets/event-cover.jpg" id="cover">
+	<img src="assets/event-cover.jpg" id="cover">
 	<h2 class="title">Tell us what you like</h2>
 	<p class="title">You can change this at any time in your profile</p>
 
@@ -17,20 +17,20 @@
 
 		<ion-col>
 			<ion-card [ngClass]="{'selected': item[0].selected}" (click)="check(i,0)">
-				<img src="../../assets/{{item[0].image}}" />
+				<img src="assets/{{item[0].image}}" />
 				<div class="card-title">{{item[0].name}}</div>
 			</ion-card>
 		</ion-col>
 		<ion-col>
 			<ion-card [ngClass]="{'selected': item[1].selected}" (click)="check(i,1)">
-				<img src="../../assets/{{item[1].image}}" />
+				<img src="assets/{{item[1].image}}" />
 				<div class="card-title">{{item[1].name}}</div>
 			</ion-card>
 		</ion-col>
 
 		<ion-col>
 			<ion-card [ngClass]="{'selected': item[2].selected}" (click)="check(i,2)">
-				<img src="../../assets/{{item[2].image}}" />
+				<img src="assets/{{item[2].image}}" />
 				<div class="card-title">{{item[2].name}}</div>
 			</ion-card>
 		</ion-col>
