@@ -8,8 +8,20 @@ page-events {
         width: 260px;
     }
 
-    .add-button {
+    .home-button {
         margin: 0;
+        width: 30px;
+        height: 30px
+    }
+
+    .home-icon {
+        color: #FFF;
+        font-size: 18pt;
+        margin-left: 10px;
+    }
+
+    .add-button {
+        margin-left: 260px;
         width: 30px;
         height: 30px
     }
@@ -84,7 +96,7 @@ page-events {
     }
 
     .event-descrip {
-        margin-top: 20px;
+        margin-top: 10px;
         margin-bottom: 5px;
         line-height: 1.2em;
         color: #212121;
@@ -135,6 +147,15 @@ page-events {
 
     #comment-count {
         left: 20px;
+    }
+
+
+    ion-tabs {
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        background-color: blue;
+        height: 100px;
     }
 }
 

@@ -64,6 +64,8 @@ export class EventsPage {
         var inTitle = (item.title.toLowerCase().indexOf(val.toLowerCase()) > -1);
 
         return (inTitle || inDescription);
+
+        // return item.description.toLowerCase().indexOf(val.toLowerCase()) > -1
       })
     }
   }
