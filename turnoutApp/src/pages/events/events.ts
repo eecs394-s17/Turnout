@@ -4,6 +4,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule, AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 import { AddEvents } from '../add-events/add-events';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the Events page.
@@ -19,6 +20,7 @@ import { AddEvents } from '../add-events/add-events';
 export class EventsPage {
 
   addEvents = AddEvents;
+  homePage = HomePage;
   events = [];
   filteredEvents = [];
 
