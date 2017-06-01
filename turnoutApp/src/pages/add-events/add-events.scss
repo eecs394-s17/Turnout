@@ -24,14 +24,14 @@ page-add-events {
         text-align: center;
         left: 45%;
         right: 45%;
-        margin-top: -130px;
+        margin-top: -150px;
     }
 
     .photo-div > h3 {
         font-family: "SF-UI-Display-Regular";
         // color: #FFF;
         position: absolute;
-        margin-top: -80px;
+        margin-top: -100px;
         color: #fff;
         left: 20%;
         right: 20%;
@@ -49,7 +49,7 @@ page-add-events {
         #title {
             position: absolute;
             padding-top: 92px;
-            margin-left: 36px;
+            margin-left: 40px;
             color: #FFF;
         }
 
@@ -71,27 +71,45 @@ page-add-events {
         }
     }
 
-    #time-icon, #loc-icon, #descrip-icon {
+    #time-icon, #categ-icon, #loc-icon, #descrip-icon {
         position: absolute;
+        color: #29D9CB;
+        font-size: 24px;
     }
 
     #time-icon {
-
+        left: 11px;
+        margin-top: 9px;
     }
 
     #loc-icon {
+        left: 13px;
+        margin-top: 54px;
+    }
 
+    #categ-icon {
+        left: 10px;
+        margin-top: 97px;
     }
 
     #descrip-icon {
-
+        left: 12px;
+        margin-top: 142px;
     }
 
 
     form {
         color: #FFF;
         background-color: transparent;
-        margin-left: 20px;
+        margin-left: 24px;
+
+        ion-item {
+
+            ion-label {
+                color: #212121;
+                font-family: "SF-UI-Display-Regular";
+            }
+        }
     }
 
     .item {
@@ -101,5 +119,40 @@ page-add-events {
     #submit-button {
         width: 95%;
         margin: 3% 2.5% 2% 2.5%;
+    }
+
+    #checks {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        border: none;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5px;
+
+        .checkboxes {
+            flex-grow: 1;
+            flex-basis: 33%;
+            font-size: 0.75em;
+            padding: 0;
+
+            ion-checkbox {
+                margin-right: 5px;
+                color: #F26173;
+
+                button {
+                    padding: 0;
+                }
+            }
+        }
+
+        .item-block {
+
+            .item-inner {
+                padding-right: 0;
+                border-bottom: 0;
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@
 
 <ion-content padding>
   <div class="photo-div">
-    <img src="../../assets/add.jpg" class="event-img">
+    <img src="../../assets/movies.jpg" class="event-img">
     <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
     <h3>Change Picture</h3>
     <p></p>
@@ -25,22 +25,28 @@
   </div>
 
   <ion-icon ios="ios-calendar-outline" md="md-calendar" id="time-icon"></ion-icon>
+  <ion-icon ios="ios-pricetags-outline" md="md-pricetags" id="categ-icon"></ion-icon>
   <ion-icon ios="ios-pin-outline" md="md-pin" id="loc-icon"></ion-icon>
-  <ion-icon ios="ios-reorder" md="md-reorder" id="descrip-icon"></ion-icon>
+  <ion-icon ios="ios-paper-outline" md="md-paper" id="descrip-icon"></ion-icon>
 
   <form>
     <ion-item>
-      <ion-label fixed>Start Time</ion-label>
+      <ion-label fixed>Start Time:</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY h:mm A" pickerFormat="MM/DD/YYYY h mm A" [(ngModel)]="event.date" name="date"></ion-datetime>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>Location</ion-label>
+      <ion-label fixed>Location:</ion-label>
       <ion-input type="text" value="" [(ngModel)]="event.location" name="location"></ion-input>
     </ion-item>
 
     <ion-item>
-      <ion-label fixed>Description</ion-label>
+      <ion-label fixed>Categories:</ion-label>
+      <ion-input type="text" name="categories"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Description:</ion-label>
       <ion-input type="text" value="" [(ngModel)]="event.description" name="description"></ion-input>
     </ion-item>
 
@@ -48,6 +54,23 @@
       <ion-icon name="add"></ion-icon>
     </button> -->
   </form>
+
+  <div id="checks">
+    <ion-item class="checkboxes">
+      <ion-label>NU Only</ion-label>
+      <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="checkboxes">
+      <ion-label>21+ Event</ion-label>
+      <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+    </ion-item>
+
+    <ion-item class="checkboxes">
+      <ion-label>Notify Others</ion-label>
+      <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+    </ion-item>
+  </div>
 
   <button ion-button navPop (click)="submitEvent()" block id="submit-button">Add Event</button>
 
