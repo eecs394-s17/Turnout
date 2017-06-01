@@ -16,16 +16,19 @@
   </div>
 
   <div class="title-div">
-
+    <h3 id="title">TITLE: </h3>
+    <form>
+      <ion-item >
+        <ion-input type="text" value="" [(ngModel)]="event.title" name="title"></ion-input>
+      </ion-item>
+    </form>
   </div>
 
+  <ion-icon ios="ios-calendar-outline" md="md-calendar" id="time-icon"></ion-icon>
+  <ion-icon ios="ios-pin-outline" md="md-pin" id="loc-icon"></ion-icon>
+  <ion-icon ios="ios-reorder" md="md-reorder" id="descrip-icon"></ion-icon>
 
   <form>
-    <ion-item >
-      <ion-label fixed>Title</ion-label>
-      <ion-input type="text" value="" [(ngModel)]="event.title" name="title"></ion-input>
-    </ion-item>
-
     <ion-item>
       <ion-label fixed>Start Time</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY h:mm A" pickerFormat="MM/DD/YYYY h mm A" [(ngModel)]="event.date" name="date"></ion-datetime>
@@ -44,7 +47,8 @@
     <!-- <button ion-button icon-only type="submit">
       <ion-icon name="add"></ion-icon>
     </button> -->
-    <button ion-button navPop (click)="submitEvent()" block id="submit-button">Add Event</button>
   </form>
+
+  <button ion-button navPop (click)="submitEvent()" block id="submit-button">Add Event</button>
 
 </ion-content>
