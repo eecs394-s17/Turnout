@@ -10,12 +10,18 @@ Install dependencies by going into the turnoutApp folder and running
 npm install --save --save-peers
 ```
 
-## Starting 
-Run the following code to start the project. Make sure Ionic2 is installed on your device. Documentation on how to install Ionic can be found here: https://ionicframework.com/getting-started/
+## Build and Deploy
+Run the following code to start the project. Make sure Ionic2 is installed on your device. Documentation on how to install Ionic can be found [here](https://ionicframework.com/getting-started/)
 ```
 ionic serve
 ```
 Checkout www.localhost:8100 to view the site
+To see the application on a mobile frame, go to www.localhost:8100/ionic-lab or launch the application with
+```
+ionic serve --lab
+```
+
+Since the application uses Firebase, developers working on the project should set up a Firebase account [here](https://console.firebase.google.com/)
 
 ## Platform Constraints
 The application is written as a hybrid application, meaning it can run on mobile or web. The deploy the app on mobile, users can download the IonicView mobile app, plug the phone into the computer using a data-transfer cable, and run the command
@@ -24,7 +30,7 @@ ionic upload
 ```
 
 ## Dependencies
-The only dependency for the site currently is the installation of Ionic2 and its dependencies.
+Aside from the installation of Ionic2 and it's dependencies, the application requires firebase and angularfire2.
 
 ## Bugs & Fixes
 The sign in page currently does not function. The user can put in any username & password combination to continue using the site. Additionally, on the events page, users can only view events and cannot RSVP or interact with any of the event objects. Other than that, there are no bugs or fixes. The site should function without problems.
