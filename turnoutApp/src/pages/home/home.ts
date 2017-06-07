@@ -12,6 +12,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
+    var rowLen = 3;
+
   	var prefs = ["Music","Food","Sports","Theater","Movies","Nightlife","Greek","Career","Tech"];
     var images = ["music.jpg","food.jpg","sports.jpg","theater.jpg","movies.jpg","nightlife.jpg","greek.jpg","career.jpg","science.jpg"];
 
@@ -28,9 +30,15 @@ export class HomePage {
 
     var ilen = this.items.length;
     var nitems = [];
-    for(var i=0;i<ilen;i+=3) {
+    for(var i=0;i<ilen;i+=rowLen) {
 
-      nitems.push([this.items[i],this.items[i+1],this.items[i+2]]);
+      var colitems = [];
+
+      for(var j=0;j<rowLen;j++) {
+        colitems.push(this.items[i + j])
+      }
+
+      nitems.push(colitems);
 
     }
 
