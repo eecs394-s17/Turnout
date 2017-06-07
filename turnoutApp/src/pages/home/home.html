@@ -15,23 +15,10 @@
 
 	<ion-row *ngFor="let item of items;let i = index">
 
-		<ion-col>
-			<ion-card [ngClass]="{'selected': item[0].selected}" (click)="check(i,0)">
-				<img src="assets/{{item[0].image}}" />
-				<div class="card-title">{{item[0].name}}</div>
-			</ion-card>
-		</ion-col>
-		<ion-col>
-			<ion-card [ngClass]="{'selected': item[1].selected}" (click)="check(i,1)">
-				<img src="assets/{{item[1].image}}" />
-				<div class="card-title">{{item[1].name}}</div>
-			</ion-card>
-		</ion-col>
-
-		<ion-col>
-			<ion-card [ngClass]="{'selected': item[2].selected}" (click)="check(i,2)">
-				<img src="assets/{{item[2].image}}" />
-				<div class="card-title">{{item[2].name}}</div>
+		<ion-col *ngFor="let col of item;let j = index">
+			<ion-card [ngClass]="{'selected': col.selected}" (click)="check(i,j)">
+				<img src="assets/{{col.image}}" />
+				<div class="card-title">{{col.name}}</div>
 			</ion-card>
 		</ion-col>
 
@@ -39,33 +26,5 @@
 </ion-grid>
 
 <button ion-button icon-right (click)="submitPrefs()" id="go-button">Let's Go </button>
-
-
-
-
-<!--   <ion-card>
-		<img src="../../assets/music.jpg" />
-		<div class="card-title">Music</div>
-	</ion-card>
-	<ion-card>
-		<img src="../../assets/sports.jpg" />
-		<div class="card-title">Sports</div>
-	</ion-card>
-	<ion-card>
-		<img src="../../assets/theater.jpg" />
-		<div class="card-title">Theater</div>
-	</ion-card>
-	<ion-card>
-		<img src="../../assets/food.jpg" />
-		<div class="card-title">Food</div>
-	</ion-card>
-	<ion-card>
-		<img src="../../assets/science.jpg" />
-		<div class="card-title">Sci/Tech</div>
-	</ion-card>
-	<ion-card>
-		<img src="../../assets/movies.jpg" />
-		<div class="card-title">Movies</div>
-	</ion-card> -->
 
 </ion-content>
