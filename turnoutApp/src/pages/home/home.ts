@@ -49,15 +49,13 @@ export class HomePage {
   submitPrefs() {
     var selected = [];
     this.items.forEach(function(item){
-      if(item[0].selected){
-        selected.push(item[0]);
-      }
-      if(item[1].selected){
-        selected.push(item[1]);
-      }
-      if(item[2].selected){
-        selected.push(item[2]);
-      }
+      item.forEach(function(col){
+
+        if(col.selected){
+          selected.push(col);
+        }
+
+      });
     })
     this.navCtrl.setRoot(EventsPage, selected);
   }
