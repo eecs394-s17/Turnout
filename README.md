@@ -21,7 +21,7 @@ To see the application on a mobile frame, go to www.localhost:8100/ionic-lab or 
 ionic serve --lab
 ```
 
-Since the application uses Firebase, developers working on the project should set up a Firebase account [here](https://console.firebase.google.com/)
+Since the application uses Firebase, developers working on the project should set up a Firebase account [here](https://firebase.google.com/)
 
 ## Platform Constraints
 The application is written as a hybrid application, meaning it can run on mobile or web. The deploy the app on mobile, users can download the IonicView mobile app, plug the phone into the computer using a data-transfer cable, and run the command
